@@ -1,0 +1,30 @@
+// Define the Student class
+class Student {
+    constructor(name, mathScore, scienceScore, englishScore) {
+        this.name = name;
+        this.mathScore = mathScore;
+        this.scienceScore = scienceScore;
+        this.englishScore = englishScore;
+    }
+
+    getTotalScore() {
+        return this.mathScore + this.scienceScore + this.englishScore;
+    }
+}
+
+// Create an array of Student objects
+const students = [
+    new Student("Alice", 90, 85, 92),
+    new Student("Bob", 88, 91, 89),
+    new Student("Charlie", 94, 87, 95),
+    // Add more students as needed
+];
+
+// Sort the array of students based on total scores
+students.sort((a, b) => b.getTotalScore() - a.getTotalScore());
+
+// Display the sorted students
+console.log("Students sorted by total scores:");
+students.forEach(student => {
+    console.log(`${student.name}: Total Score - ${student.getTotalScore()}`);
+});
