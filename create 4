@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Highlight Words</title>
+    <style>
+        body {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .highlight {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <p id="paragraphText">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consequat mauris vel mi vestibulum, vel
+        tristique odio fermentum. Integer vehicula finibus risus nec tempus. Vestibulum auctor tortor a
+        porttitor malesuada. Phasellus vel dolor sed libero consectetur vestibulum.
+    </p>
+
+    <script>
+        // JavaScript code to highlight words over 8 characters long
+        const paragraph = document.getElementById("paragraphText");
+        const words = paragraph.innerText.split(/\s+/);
+
+        for (let i = 0; i < words.length; i++) {
+            if (words[i].length > 8) {
+                words[i] = '<span class="highlight">' + words[i] + '</span>';
+            }
+        }
+
+        paragraph.innerHTML = words.join(' ');
+    </script>
+</body>
+</html>
