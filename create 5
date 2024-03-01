@@ -1,0 +1,11 @@
+function isFirstCharUppercase(str) {
+    // Check if the first character is uppercase using a regular expression
+    return /^[A-Z]/.test(str);
+}
+
+// Example usage:
+const testString1 = "Hello, World!";
+const testString2 = "javascript";
+
+console.log(`Is the first character of "${testString1}" uppercase? ${isFirstCharUppercase(testString1)}`);
+console.log(`Is the first character of "${testString2}" uppercase? ${isFirstCharUppercase(testString2)}`);
